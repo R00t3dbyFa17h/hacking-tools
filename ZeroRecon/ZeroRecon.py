@@ -28,7 +28,7 @@ def banner():
 /_____\___|_|  \___/ |_|  \_\___|\___\___/|_| |_|
     """)
     print(f"{CYAN}{SLOGAN}{RESET}")
-    print(f"{YELLOW}Author: R00t3dbyFa17h{RESET}")
+    print(f"{YELLOW}Author: R00t3dbyFa17h/K70n0s510{RESET}")
     print("-" * 50)
 
 def check_dependencies():
