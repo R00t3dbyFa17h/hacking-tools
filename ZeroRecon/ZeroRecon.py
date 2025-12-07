@@ -131,7 +131,8 @@ def main():
     # 6. HTTPX
     print(f"{GREEN}[+] Probing live hosts with Httpx...{RESET}")
     live_hosts_file = os.path.join(output_dir, "live_hosts.txt")
-    httpx_cmd = f"cat {subs_file} | httpx -silent -title -tech-detect -status-code -follow-redirects"
+    # We added '-threads 10' to keep it slow and stable
+httpx_cmd = f"cat {subs_file} | httpx -silent -threads 10 -title -tech-detect -status-code -follow-redirects"
     httpx_out = run_command(httpx_cmd, shell=True)
     
     live_urls = []
