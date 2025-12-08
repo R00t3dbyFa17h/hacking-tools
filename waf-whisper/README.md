@@ -30,7 +30,7 @@ graph TD;
     B -- Clean --> D[Direct Mode];
     C --> E{Rate Limit Probe};
     E --> F[Calculate Safe Delay];
-    F --> G[Fragment Payload < MPL];
+    F --> G["Fragment Payload (MPL)"];
     G --> H[Execute Whisper Attack];
 
 📜 Version History & Changelog
