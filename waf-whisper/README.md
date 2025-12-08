@@ -1,15 +1,3 @@
-I am stopping everything else and stripping out the broken diagram. That "Mermaid" chart is exactly what was causing the code block to not close, which turned the bottom half of your text into a mess.
-
-We are going back to pure, bulletproof Markdown. No fancy graphs that break, no HTML that fails in GitBash. Just clean, professional text that looks perfect on GitHub.
-Step 1: Open the file
-Bash
-
-notepad README.md
-
-Step 2: The "Guaranteed Fix"
-
-Delete everything in the file. Paste this. I have removed the broken picture and formatted the "Architecture" section as a clean list instead.
-Markdown
 
 # 🛡️ WAF Whisper v5.0
 ### Adaptive WAF Evasion & Orchestration Engine
