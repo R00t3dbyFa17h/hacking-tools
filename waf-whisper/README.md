@@ -1,3 +1,16 @@
+I am stopping everything else and stripping out the broken diagram. That "Mermaid" chart is exactly what was causing the code block to not close, which turned the bottom half of your text into a mess.
+
+We are going back to pure, bulletproof Markdown. No fancy graphs that break, no HTML that fails in GitBash. Just clean, professional text that looks perfect on GitHub.
+Step 1: Open the file
+Bash
+
+notepad README.md
+
+Step 2: The "Guaranteed Fix"
+
+Delete everything in the file. Paste this. I have removed the broken picture and formatted the "Architecture" section as a clean list instead.
+Markdown
+
 # 🛡️ WAF Whisper v5.0
 ### Adaptive WAF Evasion & Orchestration Engine
 
@@ -21,55 +34,54 @@ Modern Web Application Firewalls (WAFs) like Cloudflare, AWS Shield, and Akamai 
 
 ## 🧠 The Guardrail-Ghost Architecture
 
-The engine operates on a decision loop that prioritizes stealth over speed.
+The engine operates on a decision loop that prioritizes stealth over speed. Instead of blindly firing payloads, it follows this strict logic flow:
 
-```mermaid
-graph TD;
-    A[Target Identified] --> B{Check WAF Headers};
-    B -- Detected --> C[Ghost Mode: Rotate UA & Jitter];
-    B -- Clean --> D[Direct Mode];
-    C --> E{Rate Limit Probe};
-    E --> F[Calculate Safe Delay];
-    F --> G["Fragment Payload (MPL)"];
-    G --> H[Execute Whisper Attack];
+1.  **Target Identification:** Checks if the target is live.
+2.  **Passive Fingerprinting:** Identifies WAF headers without attacking.
+3.  **Ghost Mode Decision:** If a WAF is found, it engages User-Agent rotation and jitter.
+4.  **Rate Limit Probing:** Tests the WAF's patience to find the maximum safe speed.
+5.  **Payload Fragmentation:** Splits attacks into chunks smaller than the WAF's inspection limit.
+6.  **Whisper Attack:** Reassembles the payload on the server side to bypass detection.
 
-📜 Version History & Changelog
+---
+
+## 📜 Version History & Changelog
 
 This tool has evolved from a simple fuzzer to a stateful evasion engine.
-Version	Codename	Key Capabilities Added
-v5.0	Guardrail-Ghost	Current Release. Added MPL Fragmentation, Binary Search Rate Limiting, and Phase 8 Blind Verification.
-v4.2	Low-and-Slow	Introduced --delay algorithm to defeat heuristic rate monitoring.
-v3.0	Ghost Mode	Added Random User-Agent Rotation and Passive WAF Fingerprinting (Cloudflare/AWS detection).
-v2.1	Proxy Link	Added -p flag for integration with BurpSuite and OWASP ZAP.
-v1.0	Whisper	Initial Release. Basic Payload Mutation (URL Encoding/Double URL).
-🛡️ Key Features
-👻 Phase 0: Ghost Mode (Client Emulation)
 
-    Signature Spoofing: Injects TLS-consistent headers to indistinguishably mimic legitimate browser traffic.
+| Version | Codename | Key Capabilities Added |
+| :--- | :--- | :--- |
+| **v5.0** | **Guardrail-Ghost** | Current Release. Added MPL Fragmentation, Binary Search Rate Limiting, and Phase 8 Blind Verification. |
+| **v4.2** | **Low-and-Slow** | Introduced `--delay` algorithm to defeat heuristic rate monitoring. |
+| **v3.0** | **Ghost Mode** | Added Random User-Agent Rotation and Passive WAF Fingerprinting (Cloudflare/AWS detection). |
+| **v2.1** | **Proxy Link** | Added `-p` flag for integration with BurpSuite and OWASP ZAP. |
+| **v1.0** | **Whisper** | Initial Release. Basic Payload Mutation (URL Encoding/Double URL). |
 
-    Randomized UA Rotation: Automatically cycles User-Agents to prevent fingerprinting during prolonged scans.
+---
 
-⏱️ Phase 4: Adaptive Rate Limit Profiling
+## 🛡️ Key Features
 
-    Dynamic Throttling: The tool doesn't guess the speed limit; it finds it.
+### 👻 Phase 0: Ghost Mode (Client Emulation)
+* **Signature Spoofing:** Injects TLS-consistent headers to indistinguishably mimic legitimate browser traffic.
+* **Randomized UA Rotation:** Automatically cycles User-Agents to prevent fingerprinting during prolonged scans.
 
-    Low-and-Slow: Uses the --delay algorithm to introduce randomized "human" latency between requests.
+### ⏱️ Phase 4: Adaptive Rate Limit Profiling
+* **Dynamic Throttling:** The tool doesn't guess the speed limit; it finds it.
+* **Low-and-Slow:** Uses the `--delay` algorithm to introduce randomized "human" latency between requests.
 
-🧩 Phase 6: MPL Discovery & Fragmentation
+### 🧩 Phase 6: MPL Discovery & Fragmentation
+* **Max Payload Length (MPL):** Uses a binary search algorithm to find the exact byte limit the WAF inspects.
+* **Fragmentation Attack:** Automatically splits complex payloads into chunks smaller than the MPL, reassembling them on the server side.
 
-    Max Payload Length (MPL): Uses a binary search algorithm to find the exact byte limit the WAF inspects.
+### 🗣️ Phase 7: Semantic Polyglots
+* **Signature Inversion:** Bypasses keyword filters (e.g., `cat /etc/passwd`) using shell expansion and IFS evasion specific to Linux backends.
 
-    Fragmentation Attack: Automatically splits complex payloads into chunks smaller than the MPL, reassembling them on the server side.
+---
 
-🗣️ Phase 7: Semantic Polyglots
+## ⚙️ Installation
 
-    Signature Inversion: Bypasses keyword filters (e.g., cat /etc/passwd) using shell expansion and IFS evasion specific to Linux backends.
-
-⚙️ Installation
-
-1. Clone the Repository
-Bash
-
+**1. Clone the Repository**
+```bash
 git clone [https://github.com/R00t3dbyFa17h/WAF-Whisper.git](https://github.com/R00t3dbyFa17h/WAF-Whisper.git)
 cd WAF-Whisper
 
