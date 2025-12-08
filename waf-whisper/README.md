@@ -68,21 +68,21 @@ Standard scanners force payloads into the URL. WAF Whisper leverages **Protocol 
    cd WAF-Whisper
 
     Install Dependencies
-   ```Bash
+     Bash
 
-    pip3 install -r requirements.txt
+   `pip3 install -r requirements.txt`
 
 🚀 Usage
 
 Basic Scan (Ghost Mode)
-```Bash
+   Bash
 
-python3 waf_whisper.py -u [https://target.com](https://target.com)
+`python3 waf_whisper.py -u [https://target.com](https://target.com)`
 
 Verbose Mode (Deep Analysis)
-```Bash
+  Bash
 
-python3 waf_whisper.py -u [https://target.com](https://target.com) -v
+`python3 waf_whisper.py -u [https://target.com](https://target.com) -v`
 
 ⚠️ Legal Disclaimer
 
