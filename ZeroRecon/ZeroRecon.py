@@ -15,21 +15,21 @@ YELLOW = '\033[93m'
 CYAN = '\033[96m'
 RESET = '\033[0m'
 
-SLOGAN = "🛑 → zero in on targets with accuracy"
+SLOGAN = "🛑 → ZERO IN ON TARGETS WITH ACCURACY"
 
 def banner():
     print(f"{RED}")
     print(r"""
- ______               _____                      
-|___  /              |  __ \                     
-   / / ___ _ __ ___  | |__) |___  ___ ___  _ __  
-  / / / _ \ '__/ _ \ |  _  // _ \/ __/ _ \| '_ \ 
- / /_|  __/ | | (_) || | \ \  __/ (_| (_) | | | |
-/_____\___|_|  \___/ |_|  \_\___|\___\___/|_| |_|
+  ______                    _____                           
+ |___  /                   |  __ \                          
+    / /   ___  _ __   ___  | |__) |  ___   ___   ___   _ __ 
+   / /   / _ \| '__| / _ \ |  _  /  / _ \ / __| / _ \ | '_ \
+  / /__ |  __/| |   | (_) || | \ \ |  __/| (__ | (_) || | | |
+ /_____| \___||_|    \___/ |_|  \_\ \___| \___| \___/ |_| |_|
     """)
-    print(f"{CYAN}{SLOGAN}{RESET}")
-    print(f"{YELLOW}Author: R00t3dbyFa17h/K70n0s510{RESET}")
-    print("-" * 50)
+    print(f"{CYAN}       {SLOGAN}{RESET}")
+    print(f"{YELLOW}            Author: R00t3dbyFa17h{RESET}")
+    print(f"{RED}" + "=" * 65 + f"{RESET}")
 
 def check_dependencies():
     tools = ["subfinder", "assetfinder", "findomain", "gau", "httpx", "aquatone"]
@@ -131,8 +131,10 @@ def main():
     # 6. HTTPX
     print(f"{GREEN}[+] Probing live hosts with Httpx...{RESET}")
     live_hosts_file = os.path.join(output_dir, "live_hosts.txt")
-    # We added '-threads 10' to keep it slow and stable
-httpx_cmd = f"cat {subs_file} | httpx -silent -threads 10 -title -tech-detect -status-code -follow-redirects"
+    
+    # [FIXED] Indentation is now correct below:
+    httpx_cmd = f"cat {subs_file} | httpx -silent -threads 10 -title -tech-detect -status-code -follow-redirects"
+    
     httpx_out = run_command(httpx_cmd, shell=True)
     
     live_urls = []
