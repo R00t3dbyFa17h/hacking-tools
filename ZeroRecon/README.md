@@ -55,42 +55,42 @@ cd hacking-tools
 # 3. Run the Auto-Installer (Root required)
 chmod +x install_dependencies.sh
 sudo ./install_dependencies.sh
-
+```
 💻 Usage
 1. The "Quick Map" (Standard Recon)
 
 Maps the attack surface. Good for a quick overview.
-Bash
 
-python3 ZeroRecon.py -t canva.com
+
+`python3 ZeroRecon.py -t Target.com`
 
 2. The "Paranoid" Scan (Recommended)
 
 Enables all 7 layers of discovery, including Amass and DNS brute forcing (if configured). Use this for bug bounties.
-Bash
 
-python3 ZeroRecon.py -t canva.com --paranoid
+
+`python3 ZeroRecon.py -t Target.com --paranoid`
 
 3. The "Bug Hunter" (Full Kill Chain)
 
 This maps the network, crawls for parameters (IDORs), and scans for CVEs automatically.
-Bash
 
-python3 ZeroRecon.py -t canva.com --paranoid --crawl --nuclei
+
+`python3 ZeroRecon.py -t Target.com --paranoid --crawl --nuclei`
 
 4. The "API & Ghost" Hunt
 
 Specifically targets API endpoints (Swagger/GraphQL) and historical endpoints that no longer exist on the main site.
-Bash
 
-python3 ZeroRecon.py -t canva.com --api --history
+
+`python3 ZeroRecon.py -t Target.com --api --history`
 
 5. Remote Alerts (Discord)
 
 Run the script on a VPS and get a ping on your phone when it's done.
-Bash
 
-python3 ZeroRecon.py -t canva.com --paranoid --webhook "YOUR_DISCORD_WEBHOOK_URL"
+
+`python3 ZeroRecon.py -t Target.com --paranoid --webhook "YOUR_DISCORD_WEBHOOK_URL"`
 
 🛠️ Toolset Integration
 
