@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  🛑 ZeroRecon v1.1
+  🛑 ZeroRecon v4.0
   <br>
 </h1>
 
