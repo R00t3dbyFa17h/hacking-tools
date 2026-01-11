@@ -56,51 +56,52 @@ cd hacking-tools
 chmod +x install_dependencies.sh
 sudo ./install_dependencies.sh
 ```
-💻 Usage
-1. The "Quick Map" (Standard Recon)
+## 💻 Usage
+**1. The "Quick Map" (Standard Recon)**
 
 Maps the attack surface. Good for a quick overview.
 
 
 `python3 ZeroRecon.py -t Target.com`
 
-2. The "Paranoid" Scan (Recommended)
+**2. The "Paranoid" Scan (Recommended)**
 
 Enables all 7 layers of discovery, including Amass and DNS brute forcing (if configured). Use this for bug bounties.
 
 
 `python3 ZeroRecon.py -t Target.com --paranoid`
 
-3. The "Bug Hunter" (Full Kill Chain)
+**3. The "Bug Hunter" (Full Kill Chain)**
 
 This maps the network, crawls for parameters (IDORs), and scans for CVEs automatically.
 
 
 `python3 ZeroRecon.py -t Target.com --paranoid --crawl --nuclei`
 
-4. The "API & Ghost" Hunt
+**4. The "API & Ghost" Hunt**
 
 Specifically targets API endpoints (Swagger/GraphQL) and historical endpoints that no longer exist on the main site.
 
 
 `python3 ZeroRecon.py -t Target.com --api --history`
 
-5. Remote Alerts (Discord)
+**5. Remote Alerts (Discord)**
 
 Run the script on a VPS and get a ping on your phone when it's done.
 
 
 `python3 ZeroRecon.py -t Target.com --paranoid --webhook "YOUR_DISCORD_WEBHOOK_URL"`
 
-🛠️ Toolset Integration
+## 🛠️ Toolset Integration
 
-ZeroRecon powers its engine using the best open-source tools available:
-Category	Tools Used
-Discovery	Subfinder, Assetfinder, Findomain, Amass, Chaos
-Probing	Httpx, Httprobe, Naabu
-Crawling	Katana, Gau (GetAllUrls)
-Scanning	Nuclei
-⚠️ Disclaimer
+**ZeroRecon powers its engine using the best open-source tools available:**
+
+| Category ||	Tools Used |
+| Discovery ||	Subfinder, Assetfinder, Findomain, Amass, Chaos
+| Probing ||	Httpx, Httprobe, Naabu
+| Crawling ||	Katana, Gau (GetAllUrls)
+| Scanning ||	Nuclei
+## ⚠️ Disclaimer
 
 This tool is for educational purposes and authorized security testing only. Do not use this tool on targets you do not have explicit permission to test. The author is not responsible for any misuse or damage caused by this program.
 
