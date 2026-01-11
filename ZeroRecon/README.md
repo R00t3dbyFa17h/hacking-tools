@@ -64,6 +64,7 @@ Maps the attack surface. Good for a quick overview.
 
 `python3 ZeroRecon.py -t Target.com`
 
+## ParanoidMode
 **2. The "Paranoid" Scan (Recommended)**
 
 Enables all 7 layers of discovery, including Amass and DNS brute forcing (if configured). Use this for bug bounties.
@@ -107,7 +108,7 @@ Run the script on a VPS and get a ping on your phone when it's done.
 ---
 
 > [!CAUTION]
-> ### ⚠️ Disclaimer
+> ## ⚠️ Disclaimer
 > This tool is for **educational purposes** and **authorized security testing** only. Do not use this tool on targets you do not have explicit permission to test.
 
 
