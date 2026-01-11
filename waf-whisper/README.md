@@ -101,9 +101,10 @@ Route traffic through a local proxy for deeper analysis.
 `python3 waf_whisper.py -u [https://target.com](https://target.com) -p [http://127.0.0.1:8080](http://127.0.0.1:8080) -v`
 
 **4. Full Help Menu**
-Plaintext
+**Plaintext**
 
-```usage: waf_whisper.py [-h] -u URL [-v] [-p PROXY] [--delay DELAY] [--ghost]
+```
+usage: waf_whisper.py [-h] -u URL [-v] [-p PROXY] [--delay DELAY] [--ghost]
 
 options:
   -h, --help            show this help message and exit
@@ -112,12 +113,14 @@ options:
   -p, --proxy           Proxy URL (e.g., [http://127.0.0.1:8080](http://127.0.0.1:8080))
   --delay DELAY         Manual override for Low-and-Slow delay (seconds)
   --ghost               Enable Guardrail-Ghost Mode (Randomized UA Rotation)
+
   ```
 
-##⚠️ Legal Disclaimer
+
+## ⚠️ Legal Disclaimer
 
 **FOR EDUCATIONAL PURPOSES ONLY.**
 
 **Usage of WAF-Whisper for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state, and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.**
 
-##"Rooted by Authority. Faith by Design." 
+## "Rooted by Authority. Faith by Design." Stay R00t3d In Fa17h! 
