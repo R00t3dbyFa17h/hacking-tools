@@ -103,21 +103,16 @@ Route traffic through a local proxy for deeper analysis.
 **4. Full Help Menu**
 Plaintext
 
-`usage: waf_whisper.py [-h] -u URL [-v] [-p PROXY] [--delay DELAY] [--ghost]`
+```usage: waf_whisper.py [-h] -u URL [-v] [-p PROXY] [--delay DELAY] [--ghost]
 
-`options:
+options:
   -h, --help            show this help message and exit
-  
   -u, --url             Target URL (e.g., [https://example.com](https://example.com))
-  
   -v, --verbose         Enable verbose output
-  
   -p, --proxy           Proxy URL (e.g., [http://127.0.0.1:8080](http://127.0.0.1:8080))
-  
   --delay DELAY         Manual override for Low-and-Slow delay (seconds)
-  
-  --ghost               Enable Guardrail-Ghost Mode (Randomized UA Rotation)`
-  
+  --ghost               Enable Guardrail-Ghost Mode (Randomized UA Rotation)
+  ```
 
 ##⚠️ Legal Disclaimer
 
