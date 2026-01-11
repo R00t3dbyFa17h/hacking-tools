@@ -73,34 +73,34 @@ This tool has evolved from a simple fuzzer to a stateful evasion engine.
 `git clone [https://github.com/R00t3dbyFa17h/WAF-Whisper.git](https://github.com/R00t3dbyFa17h/WAF-Whisper.git)
 cd WAF-Whisper`
 
-2. Install Dependencies
+**2. Install Dependencies**
 
 
 `pip3 install -r requirements.txt`
 
-🚀 Usage
-1. Ghost Mode Scan (Recommended)
+## 🚀 Usage
+**1. Ghost Mode Scan (Recommended)**
 
 Engage Guardrail-Ghost mode with randomized User-Agents to avoid detection.
 
 
 `python3 waf_whisper.py -u [https://target.com](https://target.com) --ghost`
 
-2. Low-and-Slow Evasion
+**2. Low-and-Slow Evasion**
 
 Manually override the delay (in seconds) to bypass strict rate-limiting sensors.
 
 
 `python3 waf_whisper.py -u [https://target.com](https://target.com) --delay 5`
 
-3. Proxied Scan (BurpSuite/Zap)
+**3. Proxied Scan (BurpSuite/Zap)**
 
 Route traffic through a local proxy for deeper analysis.
 
 
 `python3 waf_whisper.py -u [https://target.com](https://target.com) -p [http://127.0.0.1:8080](http://127.0.0.1:8080) -v`
 
-4. Full Help Menu
+**4. Full Help Menu**
 Plaintext
 
 `usage: waf_whisper.py [-h] -u URL [-v] [-p PROXY] [--delay DELAY] [--ghost]
@@ -113,8 +113,10 @@ options:
   --delay DELAY         Manual override for Low-and-Slow delay (seconds)
   --ghost               Enable Guardrail-Ghost Mode (Randomized UA Rotation)`
 
-⚠️ Legal Disclaimer
+##⚠️ Legal Disclaimer
 
-FOR EDUCATIONAL PURPOSES ONLY.
+**FOR EDUCATIONAL PURPOSES ONLY.**
 
-Usage of WAF-Whisper for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state, and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
+**Usage of WAF-Whisper for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state, and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.**
+
+##"Rooted by Authority. Faith by Design." 
