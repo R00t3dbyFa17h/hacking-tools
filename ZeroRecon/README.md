@@ -95,16 +95,24 @@ Run the script on a VPS and get a ping on your phone when it's done.
 ## 🛠️ Toolset Integration
 
 **ZeroRecon powers its engine using the best open-source tools available:**
+## 🛠️ Toolset Integration
 
-| Category ||	Tools Used |
-| Discovery ||	Subfinder, Assetfinder, Findomain, Amass, Chaos
-| Probing ||	Httpx, Httprobe, Naabu
-| Crawling ||	Katana, Gau (GetAllUrls)
-| Scanning ||	Nuclei
-## ⚠️ Disclaimer
+ZeroRecon powers its engine using the best open-source tools available:
 
-This tool is for educational purposes and authorized security testing only. Do not use this tool on targets you do not have explicit permission to test. The author is not responsible for any misuse or damage caused by this program.
+| Category | 🛡️ Tools Used |
+| :---: | :--- |
+| **Discovery** | `Subfinder`, `Assetfinder`, `Findomain`, `Amass`, `Chaos` |
+| **Probing** | `Httpx`, `Httprobe`, `Naabu` |
+| **Crawling** | `Katana`, `Gau` (GetAllUrls) |
+| **Scanning** | `Nuclei` |
 
-Authored by R00t3dbyFa17h
+---
+
+> [!CAUTION]
+> ### ⚠️ Disclaimer
+> This tool is for **educational purposes** and **authorized security testing** only. Do not use this tool on targets you do not have explicit permission to test.
+
+
+**Authored by: R00t3dbyFa17h**
 
 
