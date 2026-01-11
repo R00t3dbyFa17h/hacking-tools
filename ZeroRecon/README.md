@@ -114,4 +114,4 @@ Run the script on a VPS and get a ping on your phone when it's done.
 
 **Authored by: R00t3dbyFa17h**
 
-
+## Rooted by Authority. Faith by Design. STAY R00t3d In Fa17h!!
