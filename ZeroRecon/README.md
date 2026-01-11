@@ -95,9 +95,7 @@ Run the script on a VPS and get a ping on your phone when it's done.
 ## 🛠️ Toolset Integration
 
 **ZeroRecon powers its engine using the best open-source tools available:**
-## 🛠️ Toolset Integration
 
-ZeroRecon powers its engine using the best open-source tools available:
 
 | Category | 🛡️ Tools Used |
 | :---: | :--- |
