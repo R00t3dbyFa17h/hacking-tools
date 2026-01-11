@@ -69,41 +69,41 @@ This tool has evolved from a simple fuzzer to a stateful evasion engine.
 ## ⚙️ Installation
 
 **1. Clone the Repository**
-```bash
-git clone [https://github.com/R00t3dbyFa17h/WAF-Whisper.git](https://github.com/R00t3dbyFa17h/WAF-Whisper.git)
-cd WAF-Whisper
+
+`git clone [https://github.com/R00t3dbyFa17h/WAF-Whisper.git](https://github.com/R00t3dbyFa17h/WAF-Whisper.git)
+cd WAF-Whisper`
 
 2. Install Dependencies
-Bash
 
-pip3 install -r requirements.txt
+
+`pip3 install -r requirements.txt`
 
 🚀 Usage
 1. Ghost Mode Scan (Recommended)
 
 Engage Guardrail-Ghost mode with randomized User-Agents to avoid detection.
-Bash
 
-python3 waf_whisper.py -u [https://target.com](https://target.com) --ghost
+
+`python3 waf_whisper.py -u [https://target.com](https://target.com) --ghost`
 
 2. Low-and-Slow Evasion
 
 Manually override the delay (in seconds) to bypass strict rate-limiting sensors.
-Bash
 
-python3 waf_whisper.py -u [https://target.com](https://target.com) --delay 5
+
+`python3 waf_whisper.py -u [https://target.com](https://target.com) --delay 5`
 
 3. Proxied Scan (BurpSuite/Zap)
 
 Route traffic through a local proxy for deeper analysis.
-Bash
 
-python3 waf_whisper.py -u [https://target.com](https://target.com) -p [http://127.0.0.1:8080](http://127.0.0.1:8080) -v
+
+`python3 waf_whisper.py -u [https://target.com](https://target.com) -p [http://127.0.0.1:8080](http://127.0.0.1:8080) -v`
 
 4. Full Help Menu
 Plaintext
 
-usage: waf_whisper.py [-h] -u URL [-v] [-p PROXY] [--delay DELAY] [--ghost]
+`usage: waf_whisper.py [-h] -u URL [-v] [-p PROXY] [--delay DELAY] [--ghost]
 
 options:
   -h, --help            show this help message and exit
@@ -111,7 +111,7 @@ options:
   -v, --verbose         Enable verbose output
   -p, --proxy           Proxy URL (e.g., [http://127.0.0.1:8080](http://127.0.0.1:8080))
   --delay DELAY         Manual override for Low-and-Slow delay (seconds)
-  --ghost               Enable Guardrail-Ghost Mode (Randomized UA Rotation)
+  --ghost               Enable Guardrail-Ghost Mode (Randomized UA Rotation)`
 
 ⚠️ Legal Disclaimer
 
