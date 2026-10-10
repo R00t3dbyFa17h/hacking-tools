@@ -1,1 +1,5 @@
 requests
+
+# ZeroRecon v5.0 note: all additions use the Python 3 standard library
+# (json, concurrent.futures, time, re, shutil, subprocess) plus `requests`.
+# No new third-party dependencies are required.

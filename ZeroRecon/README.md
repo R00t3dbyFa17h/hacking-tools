@@ -107,6 +107,48 @@ Run the script on a VPS and get a ping on your phone when it's done.
 
 ---
 
+---
+
+## 🆕 v5.0 Additions (Strictly Additive)
+
+v5.0 **adds** capabilities without changing any v4.0 behavior. Every existing flag (`-t`, `-w`, `--paranoid`, `--nuclei`, `--crawl`, `--api`) works exactly as before; the banner, phases and output directory are unchanged. All new power is opt-in.
+
+### 🛰️ Passive OSINT Boost — `--osint`
+Queries **7 additional archive sources in parallel** using pure Python (no new binaries required): **HackerTarget, AlienVault OTX, RapidDNS, Anubis (jldc), URLScan.io, Wayback CDX, and CertSpotter**. Results are validated and merged into the subdomain set — it only ever *adds* findings.
+
+```bash
+python3 ZeroRecon.py -t target.com --osint
+```
+
+### 🧱 New opt-in attack-surface phases (run only if the binary is installed)
+| Flag | Adds |
+| :--- | :--- |
+| `--history` | Historical URL mining via `gau`/`waybackurls` |
+| `--ports` | Port scan of live hosts via `naabu` (top 1000) |
+| `--screenshots` | Visual recon via `gowitness`/`aquatone` |
+| `--dns` / `--dnsx` | DNS resolution + A records via `dnsx` |
+| `--gf` | Quick-win pattern matching (xss/sqli/ssrf/redirect/idor/lfi) over crawled URLs via `gf` |
+
+### 📊 Reporting & control
+| Flag | Description |
+| :--- | :--- |
+| `--json` | Machine-readable JSON summary (`zerorecon_summary.json`) |
+| `--html` | Dark-mode HTML report with live search (`zerorecon_report.html`) |
+| `-o, --output-dir DIR` | Custom output directory (default unchanged) |
+| `--threads N` | Probe/concurrency threads (default: 25) |
+| `--wordlist FILE` / `--resolvers FILE` | Parametrize the `--paranoid` puredns brute force |
+| `--version` / `-q, --quiet` | Version string / suppress extra v5.0 output |
+
+### 🧪 Full-power example
+```bash
+python3 ZeroRecon.py -t target.com --paranoid --osint --crawl --api --nuclei \
+    --history --ports --dns --gf --json --html -o ./loot_target
+```
+
+> All v5.0 additions are passive-first (the `--osint` sources are OSINT archive lookups) or wrap well-known open-source binaries you already install. No new Python dependencies beyond `requests`.
+
+---
+
 > [!CAUTION]
 > ## ⚠️ Disclaimer
 > This tool is for **educational purposes** and **authorized security testing** only. Do not use this tool on targets you do not have explicit permission to test.
