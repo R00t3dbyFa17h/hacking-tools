@@ -117,6 +117,41 @@ options:
   ```
 
 
+---
+
+## 🆕 v6.0 Additions (Strictly Additive)
+
+v6.0 **adds** capabilities without changing any v5.x behavior. Every existing flag (`-u`, `-v`, `-p`, `--delay`, `--ghost`) and every phase works exactly as before. All new power is opt-in.
+
+### 🔎 wafw00f-grade Fingerprint Database
+The passive detection phase now cross-references a **34-vendor fingerprint database** (Cloudflare, AWS, Akamai, Imperva, F5 BIG-IP, ModSecurity, Citrix, Sucuri, Wordfence, Barracuda, FortiWeb, Fastly, Azure, Google Cloud Armor, StackPath, Wallarm, Reblaze, Radware, Signal Sciences, Palo Alto, Varnish, ArvanCloud, and more). It scores each vendor by header, cookie, `Server`, and body signatures and reports confidence — **detection only, it sends no extra requests** (it reuses the response already fetched).
+
+### 🕊️ `--safe` / `--passive` — Detection-Only Mode
+Fingerprints the WAF and **stops** — sends **zero attack payloads**. Ideal for safe reconnaissance, asset inventory, or confirming a WAF before deeper (authorized) testing.
+```bash
+python3 waf_whisper.py -u https://target.com --safe
+```
+
+### 🔐 Authenticated Testing — `-H` / `--cookie`
+Test endpoints behind authentication by adding session headers/cookies (propagated to every request).
+```bash
+python3 waf_whisper.py -u https://target.com -H 'Authorization: Bearer <token>' --cookie 'session=abc'
+```
+
+### 🧬 `--max-evasion` — Extra Encoding Mutations
+Adds standard WAF-evasion encodings to the mutation phase (HTML entity decimal/hex, unicode escape, mixed/double encoding, tab/newline injection, SVG/img vectors). The default mutation set is unchanged.
+
+### 📄 Reporting & control
+| Flag | Description |
+| :--- | :--- |
+| `--json` | Machine-readable JSON report alongside the Markdown one |
+| `--output-dir DIR` | Directory for reports (default: `./WAF_Whisper_Reports`) |
+| `--version` | Print version and exit |
+
+> All v6.0 additions are detection-, reporting-, or stealth-oriented and introduce **no new Python dependencies**. The `--safe` mode makes responsible, non-intrusive assessment a first-class option.
+
+---
+
 ## ⚠️ Legal Disclaimer
 
 **FOR EDUCATIONAL PURPOSES ONLY.**

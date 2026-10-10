@@ -1,3 +1,6 @@
 requests
 colorama
 argparse
+
+# WAF-Whisper v6.0 note: all additions use the Python 3 standard library
+# (json, pathlib, re, time) plus the existing deps. No new dependencies.
